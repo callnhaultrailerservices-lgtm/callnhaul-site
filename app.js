@@ -66,14 +66,28 @@ animItems.forEach(el => {
 });
 
 // Contact form handler
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
   const success = document.getElementById('form-success');
 
-  // Basic validation already handled by HTML5 `required`
-  // In production, replace this with a real form submission (e.g., Formspree, EmailJS, etc.)
-  form.querySelectorAll('input, select, textarea').forEach(el => (el.disabled = true));
-  form.querySelector('button[type="submit"]').textContent = 'Sent!';
-  success.removeAttribute('hidden');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const response = await fetch('https://formspree.io/f/xzdjlkvl', {
+    method: 'POST',
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (response.ok) {
+    form.querySelectorAll('input, select, textarea').forEach(el => (el.disabled = true));
+    btn.textContent = 'Sent!';
+    success.removeAttribute('hidden');
+  } else {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or call us directly.');
+  }
 }
