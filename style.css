@@ -164,6 +164,8 @@ ul { list-style: none; }
   transition: color var(--transition);
 }
 .nav-links a:hover { color: #fff; }
+.nav-links a.active { color: #fff; }
+.nav-links a.active:not(.btn) { border-bottom: 2px solid var(--color-primary); padding-bottom: 2px; }
 .nav-toggle {
   display: none;
   flex-direction: column;
