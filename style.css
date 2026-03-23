@@ -136,18 +136,18 @@ ul { list-style: none; }
   color: #fff;
   display: flex;
   align-items: baseline;
-  gap: 4px;
+  gap: 0;
 }
 .logo-mark {
   color: var(--color-primary);
-  font-size: 1.4rem;
+  font-size: 1.1em;
   font-weight: 800;
 }
 .logo-sub {
   font-size: .75rem;
   font-weight: 400;
   color: rgba(255,255,255,.5);
-  margin-left: 2px;
+  margin-left: 6px;
 }
 .nav-links {
   display: flex;
