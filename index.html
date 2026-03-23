@@ -5,12 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Call N Haul Trailer Services LLC – Junk removal, home moving, furniture hauling, and more. Based in Peoria, AZ, serving all of Arizona. Available 24/7." />
   <meta name="robots" content="index, follow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="keywords" content="junk removal Peoria AZ, hauling services Arizona, furniture moving Peoria AZ, home moving Arizona, debris removal, moving company Peoria AZ, same-day hauling, trailer services Arizona" />
+  <meta name="author" content="Call N Haul Trailer Services LLC" />
+  <meta name="geo.region" content="US-AZ" />
+  <meta name="geo.placename" content="Peoria, Arizona" />
+  <meta name="geo.position" content="33.5806;-112.2374" />
+  <meta name="ICBM" content="33.5806, -112.2374" />
+  <!-- Google Search Console: replace content value with your verification code from Search Console -->
+  <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" /> -->
   <title>Junk Removal &amp; Hauling Services in Peoria, AZ | Call N Haul Trailer Services</title>
   <link rel="canonical" href="https://www.callnhaulaz.com/" />
+  <link rel="icon" type="image/png" href="images/5FC15FDA-F4F1-4FF2-A373-945AADD888C9.PNG" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.callnhaulaz.com/" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Call N Haul Trailer Services" />
   <meta property="og:title" content="Junk Removal &amp; Hauling Services in Peoria, AZ | Call N Haul Trailer Services" />
   <meta property="og:description" content="Call N Haul Trailer Services LLC – Junk removal, home moving, furniture hauling, and more. Based in Peoria, AZ, serving all of Arizona. Available 24/7." />
@@ -27,6 +38,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; object-src 'none'; base-uri 'self';" />
 
   <!-- Structured Data: LocalBusiness -->
   <script type="application/ld+json">
@@ -62,7 +76,7 @@
     "priceRange": "$$",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Hauling &amp; Removal Services",
+      "name": "Hauling & Removal Services",
       "itemListElement": [
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Junk Removal"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Home Moving"}},
@@ -198,7 +212,7 @@
   <section id="about" class="section about">
     <div class="container about-grid">
       <div class="about-image">
-        <img src="images/IMG_3262 (1).jpg" alt="Call N Haul Trailer Services" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">
+        <img src="images/IMG_3262 (1).jpg" alt="Call N Haul Trailer Services crew ready to haul in Peoria, AZ" loading="lazy">
       </div>
       <div class="about-text">
         <span class="eyebrow">About Us</span>
@@ -218,12 +232,12 @@
         <p>A look at what we do. </p>
       </div>
       <div class="gallery-grid">
-        <img src="images/IMG_3003.jpg" alt="Junk removal job completed by Call N Haul">
-        <img src="images/IMG_3029 (1).jpg" alt="Trailer loaded for hauling service">
-        <img src="images/IMG_3039.jpg" alt="Furniture moving in progress">
-        <img src="images/IMG_3140.jpg" alt="Home moving service by Call N Haul">
-        <img src="images/IMG_3173 (1).jpg" alt="Debris hauling and cleanup job">
-        <img src="images/IMG_3438 (1).jpg" alt="Call N Haul trailer at a job site">
+        <img src="images/IMG_3003.jpg" alt="Junk removal job completed by Call N Haul in Peoria AZ" loading="lazy">
+        <img src="images/IMG_3029 (1).jpg" alt="Trailer loaded for hauling service in Arizona" loading="lazy">
+        <img src="images/IMG_3039.jpg" alt="Furniture moving in progress by Call N Haul" loading="lazy">
+        <img src="images/IMG_3140.jpg" alt="Home moving service by Call N Haul Peoria AZ" loading="lazy">
+        <img src="images/IMG_3173 (1).jpg" alt="Debris hauling and cleanup job Arizona" loading="lazy">
+        <img src="images/IMG_3438 (1).jpg" alt="Call N Haul trailer at a job site in Peoria AZ" loading="lazy">
       </div>
     </div>
   </section>
@@ -273,24 +287,24 @@
         <h2>Send Us a Message</h2>
         <p>Fill out the form below and we'll reach out to confirm your service.</p>
       </div>
-      <form class="contact-form" onsubmit="handleSubmit(event)">
+      <form class="contact-form" id="contact-form" novalidate>
         <div class="form-row">
           <div class="form-group">
             <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="John Smith" required />
+            <input type="text" id="name" name="name" placeholder="John Smith" autocomplete="name" required />
           </div>
           <div class="form-group">
             <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" placeholder="(480) 555-0123" required />
+            <input type="tel" id="phone" name="phone" placeholder="(480) 555-0123" autocomplete="tel" required />
           </div>
         </div>
         <div class="form-group">
           <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" placeholder="john@example.com" />
+          <input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" />
         </div>
         <div class="form-group">
           <label for="service">Service Needed *</label>
-          <select id="service" name="service" required>
+          <select id="service" name="service" autocomplete="off" required>
             <option value="" disabled selected>Select a service…</option>
             <option>Junk Removal</option>
             <option>Home Moving</option>
@@ -303,11 +317,13 @@
         </div>
         <div class="form-group">
           <label for="message">Tell Us About Your Job</label>
-          <textarea id="message" name="message" rows="4" placeholder="Describe what you need — the more detail the better!"></textarea>
+          <textarea id="message" name="message" rows="4" autocomplete="off" placeholder="Describe what you need — the more detail the better!"></textarea>
         </div>
         <button type="submit" class="btn btn-primary btn-lg btn-full">Send Message</button>
         <p id="form-success" class="form-success" hidden>Thanks! We'll be in touch shortly.</p>
+        <p id="form-error" class="form-error" hidden>Something went wrong. Please try again or call us at <a href="tel:+16238508221">(623) 850-8221</a>.</p>
       </form>
+      <noscript><p class="form-error" style="display:block">JavaScript is required to submit this form. Please call or text us at <a href="tel:+16238508221">(623) 850-8221</a>.</p></noscript>
     </div>
   </section>
 

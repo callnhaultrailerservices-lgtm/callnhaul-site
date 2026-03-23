@@ -66,28 +66,42 @@ animItems.forEach(el => {
 });
 
 // Contact form handler
-async function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('button[type="submit"]');
-  const success = document.getElementById('form-success');
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const success = document.getElementById('form-success');
+    const error = document.getElementById('form-error');
 
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
+    // Hide previous messages
+    success.setAttribute('hidden', '');
+    error.setAttribute('hidden', '');
 
-  const response = await fetch('https://formspree.io/f/xzdjlkvl', {
-    method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch('https://formspree.io/f/xzdjlkvl', {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        form.querySelectorAll('input, select, textarea').forEach(el => (el.disabled = true));
+        btn.textContent = 'Sent!';
+        success.removeAttribute('hidden');
+      } else {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+        error.removeAttribute('hidden');
+      }
+    } catch {
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+      error.removeAttribute('hidden');
+    }
   });
-
-  if (response.ok) {
-    form.querySelectorAll('input, select, textarea').forEach(el => (el.disabled = true));
-    btn.textContent = 'Sent!';
-    success.removeAttribute('hidden');
-  } else {
-    btn.textContent = 'Send Message';
-    btn.disabled = false;
-    alert('Something went wrong. Please try again or call us directly.');
-  }
 }

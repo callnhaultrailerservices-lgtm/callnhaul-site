@@ -282,6 +282,17 @@ ul { list-style: none; }
 
 /* --- About --- */
 .about { background: var(--color-white); }
+.about-image {
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.about-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -401,6 +412,16 @@ ul { list-style: none; }
   background: #DCFCE7;
   border-radius: 8px;
 }
+.form-error {
+  color: #b91c1c;
+  font-weight: 600;
+  font-size: .95rem;
+  text-align: center;
+  padding: 12px;
+  background: #fee2e2;
+  border-radius: 8px;
+}
+.form-error a { color: inherit; text-decoration: underline; }
 
 /* --- Footer --- */
 .footer {
