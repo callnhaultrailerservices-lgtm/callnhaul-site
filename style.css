@@ -131,23 +131,13 @@ ul { list-style: none; }
   height: var(--nav-h);
 }
 .logo {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #fff;
   display: flex;
-  align-items: baseline;
-  gap: 4px;
+  align-items: center;
 }
-.logo-mark {
-  color: var(--color-primary);
-  font-size: 1.4rem;
-  font-weight: 800;
-}
-.logo-sub {
-  font-size: .75rem;
-  font-weight: 400;
-  color: rgba(255,255,255,.5);
-  margin-left: 2px;
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
 }
 .nav-links {
   display: flex;
@@ -419,6 +409,7 @@ ul { list-style: none; }
   align-items: center;
   gap: 6px;
 }
+.footer-logo-img { height: 72px; width: auto; display: block; }
 .footer-brand p { color: rgba(255,255,255,.4); font-size: .85rem; font-weight: 400; }
 .footer-links {
   display: flex;
