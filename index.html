@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Call-N-Haul Trailer Services</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --orange: #f47421;
+      --navy:   #1a2e4a;
+      --light:  #f5f7fa;
+      --white:  #ffffff;
+      --gray:   #6b7280;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      color: var(--navy);
+      background: var(--white);
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 5%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo img {
+      height: 56px;
+      width: 56px;
+      object-fit: contain;
+    }
+
+    .nav-logo span {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--orange); }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a4a72 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 6rem 5% 5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span { color: var(--orange); }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn:hover { background: #d45f0e; transform: translateY(-1px); }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 5%; }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.25rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    /* ── SERVICES ── */
+    .services { background: var(--light); }
+
+    .services-header { text-align: center; margin-bottom: 3rem; }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ── ABOUT ── */
+    .about { background: var(--white); }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .about-photo {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      aspect-ratio: 4/3;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+    }
+
+    .about-text p {
+      color: var(--gray);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--orange);
+    }
+
+    .stat span {
+      font-size: 0.85rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--navy); color: var(--white); text-align: center; }
+
+    .contact h2 { color: var(--white); }
+
+    .contact p { color: rgba(255,255,255,0.75); margin-bottom: 2rem; font-size: 1.05rem; }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-top: 2.5rem;
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-item a, .contact-item span {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .contact-item a:hover { color: var(--orange); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0f1e30;
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 1.5rem 5%;
+      font-size: 0.85rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+
+      .about-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .about-stats { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">
+      <img src="images/5FC15FDA-F4F1-4FF2-A373-945AADD888C9.PNG" alt="Call-N-Haul Logo" />
+      <span>Call-N-Haul<br>Trailer Services</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn">Get a Quote</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="section-label">Reliable &amp; Affordable</p>
+    <h1>Hauling Made <span>Simple.</span><br>Call Us &amp; We Haul It.</h1>
+    <p>From junk removal to furniture delivery — we provide dependable trailer services throughout the area, when you need it most.</p>
+    <a href="#contact" class="btn">Book a Haul</a>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-header">
+      <p class="section-label">What We Do</p>
+      <h2>Our Services</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🚛</div>
+        <h3>Furniture &amp; Moving Hauls</h3>
+        <p>Moving heavy furniture or appliances? We load, haul, and deliver safely and efficiently.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🗑️</div>
+        <h3>Junk &amp; Debris Removal</h3>
+        <p>Clearing out a garage, yard, or renovation site? We take it all off your hands.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>Delivery Services</h3>
+        <p>Need large items picked up from a store or supplier? We handle pickups and drop-offs.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏗️</div>
+        <h3>Construction Cleanup</h3>
+        <p>Post-construction debris, scrap, and material hauls handled quickly and professionally.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <img
+        src="images/IMG_3262%20(1).jpg"
+        alt="Call-N-Haul trailer loaded and ready for delivery"
+        class="about-photo"
+      />
+      <div class="about-text">
+        <p class="section-label">About Us</p>
+        <h2>Local &amp; Trusted Trailer Services</h2>
+        <p>Call-N-Haul Trailer Services was built on a simple idea: give people an easy, affordable way to haul whatever they need, whenever they need it.</p>
+        <p>We're a locally owned and operated business that takes pride in showing up on time, treating your belongings with care, and getting the job done right the first time.</p>
+        <p>Whether it's a single piece of furniture or a full trailer load, we bring the same level of dedication to every job.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <strong>100+</strong>
+            <span>Jobs Completed</span>
+          </div>
+          <div class="stat">
+            <strong>5★</strong>
+            <span>Customer Rating</span>
+          </div>
+          <div class="stat">
+            <strong>Same</strong>
+            <span>Day Availability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <p class="section-label">Get In Touch</p>
+    <h2>Ready to Haul?</h2>
+    <p>Give us a call or send a message — we'll get back to you fast with a free quote.</p>
+    <a href="tel:+16235551234" class="btn">Call Now</a>
+    <div class="contact-details">
+      <div class="contact-item">
+        <strong>Phone</strong>
+        <a href="tel:+16235551234">(623) 555-1234</a>
+      </div>
+      <div class="contact-item">
+        <strong>Email</strong>
+        <a href="mailto:callnhaultrailerservices@gmail.com">callnhaultrailerservices@gmail.com</a>
+      </div>
+      <div class="contact-item">
+        <strong>Service Area</strong>
+        <span>Greater Phoenix, AZ</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Call-N-Haul Trailer Services. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
