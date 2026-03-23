@@ -314,7 +314,7 @@ ul { list-style: none; }
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
-.gallery-grid .img-placeholder { aspect-ratio: 4/3; }
+.gallery-grid img { aspect-ratio: 4/3; width: 100%; object-fit: cover; display: block; }
 
 /* --- Schedule --- */
 .schedule {
