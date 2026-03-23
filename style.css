@@ -441,20 +441,11 @@ ul { list-style: none; }
 .contact-social-links {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   width: 100%;
 }
 .contact-social-links .contact-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-.contact-social-links .contact-link svg {
-  width: 16px;
-  height: 16px;
-  margin: 0;
-  flex-shrink: 0;
+  display: block;
 }
 
 /* Footer social icon buttons */
