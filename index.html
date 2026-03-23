@@ -58,10 +58,22 @@
       "addressRegion": "AZ",
       "addressCountry": "US"
     },
-    "areaServed": {
-      "@type": "State",
-      "name": "Arizona"
-    },
+    "areaServed": [
+      {"@type": "City", "name": "Peoria", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Phoenix", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Glendale", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Surprise", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Sun City", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "El Mirage", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Avondale", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Goodyear", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Buckeye", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Scottsdale", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Tempe", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Mesa", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Chandler", "containedInPlace": {"@type": "State", "name": "Arizona"}},
+      {"@type": "City", "name": "Gilbert", "containedInPlace": {"@type": "State", "name": "Arizona"}}
+    ],
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
@@ -102,6 +114,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#areas">Service Areas</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#schedule" class="btn btn-primary">Schedule Now</a></li>
       </ul>
@@ -115,12 +128,13 @@
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="container hero-content">
-      <span class="badge">Serving Arizona</span>
+      <span class="badge">Serving Phoenix Metro &amp; All of Arizona</span>
       <h1>Hauling, Moving & Junk Removal<br />You Can Count On</h1>
       <p class="hero-sub">Junk removal, home moving, furniture hauling, and more — serving Peoria and all of Arizona. Available 24/7, call or text anytime.</p>
       <div class="hero-actions">
-        <a href="tel:+16238508221" class="btn btn-primary btn-lg">Call / Text Us</a>
-        <a href="#services" class="btn btn-outline btn-lg">See Our Services</a>
+        <a href="tel:+16238508221" class="btn btn-primary btn-lg">Call Us</a>
+        <a href="sms:+16238508221?body=Hi%2C%20I%27m%20interested%20in%20your%20hauling%20services!" class="btn btn-outline btn-lg">Text Us</a>
+        <a href="#services" class="btn btn-ghost btn-lg">See Our Services</a>
       </div>
     </div>
   </section>
@@ -242,6 +256,37 @@
     </div>
   </section>
 
+  <!-- SERVICE AREAS -->
+  <section id="areas" class="section service-areas">
+    <div class="container">
+      <div class="section-header">
+        <h2>Cities We Serve</h2>
+        <p>Based in Peoria, AZ — we serve the greater Phoenix metro area and surrounding communities.</p>
+      </div>
+      <div class="areas-grid">
+        <span class="area-tag">Peoria</span>
+        <span class="area-tag">Phoenix</span>
+        <span class="area-tag">Glendale</span>
+        <span class="area-tag">Surprise</span>
+        <span class="area-tag">Sun City</span>
+        <span class="area-tag">Sun City West</span>
+        <span class="area-tag">El Mirage</span>
+        <span class="area-tag">Youngtown</span>
+        <span class="area-tag">Avondale</span>
+        <span class="area-tag">Goodyear</span>
+        <span class="area-tag">Litchfield Park</span>
+        <span class="area-tag">Buckeye</span>
+        <span class="area-tag">Tolleson</span>
+        <span class="area-tag">Scottsdale</span>
+        <span class="area-tag">Tempe</span>
+        <span class="area-tag">Mesa</span>
+        <span class="area-tag">Chandler</span>
+        <span class="area-tag">Gilbert</span>
+      </div>
+      <p class="areas-note">Don't see your city? <a href="tel:+16238508221">Give us a call</a> — we likely cover your area.</p>
+    </div>
+  </section>
+
   <!-- SCHEDULE / CONTACT -->
   <section id="schedule" class="section schedule">
     <div class="container">
@@ -253,8 +298,11 @@
         <div class="contact-card">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.42 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.36a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <h3>Call or Text</h3>
-          <a href="tel:+16238508221" class="contact-link">(623) 850-8221</a>
-          <p>Available 24/7</p>
+          <div class="contact-call-text">
+            <a href="tel:+16238508221" class="contact-link">📞 Call Us</a>
+            <a href="sms:+16238508221?body=Hi%2C%20I%27m%20interested%20in%20your%20hauling%20services!" class="contact-link">💬 Text Us</a>
+          </div>
+          <p>(623) 850-8221 &mdash; 24/7</p>
         </div>
         <div class="contact-card">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>

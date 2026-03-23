@@ -74,6 +74,12 @@ ul { list-style: none; }
   border-color: rgba(255,255,255,.5);
 }
 .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+.btn-ghost {
+  background: transparent;
+  color: rgba(255,255,255,.7);
+  border-color: transparent;
+}
+.btn-ghost:hover { color: #fff; border-color: rgba(255,255,255,.2); }
 .btn-lg { padding: 15px 32px; font-size: 1rem; }
 .btn-full { width: 100%; }
 
@@ -331,6 +337,49 @@ ul { list-style: none; }
   gap: 16px;
 }
 .gallery-grid img { aspect-ratio: 4/3; width: 100%; object-fit: cover; display: block; }
+
+/* --- Service Areas --- */
+.service-areas { background: var(--color-white); }
+.areas-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 860px;
+  margin: 0 auto 32px;
+}
+.area-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  background: var(--color-light);
+  border: 1.5px solid var(--color-border);
+  border-radius: 999px;
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+.area-tag:hover {
+  background: rgba(212,65,26,.07);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+.areas-note {
+  text-align: center;
+  color: var(--color-mid);
+  font-size: .95rem;
+}
+.areas-note a { color: var(--color-primary); font-weight: 600; }
+.areas-note a:hover { text-decoration: underline; }
+
+/* Call / Text split in contact card */
+.contact-call-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  margin-bottom: 8px;
+}
 
 /* --- Schedule --- */
 .schedule {
