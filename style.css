@@ -384,6 +384,55 @@ ul { list-style: none; }
 .platform-facebook{ background: #e7f0fd; color: #1877f2; }
 .platform-yelp    { background: #fdecea; color: #d32323; }
 
+/* --- Leave a Review CTA --- */
+.leave-review-cta {
+  margin-top: 56px;
+  padding: 40px 32px;
+  background: var(--color-white);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  text-align: center;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: var(--shadow);
+}
+.leave-review-stars {
+  font-size: 2rem;
+  letter-spacing: 4px;
+  color: #FBBC05;
+  margin-bottom: 12px;
+}
+.leave-review-cta h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color-dark);
+}
+.leave-review-cta p {
+  color: var(--color-mid);
+  margin-bottom: 24px;
+  font-size: .97rem;
+}
+.btn-google {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  color: #3c4043;
+  border: 1.5px solid #dadce0;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: .97rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,.12);
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+.btn-google:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  border-color: #bbb;
+}
+
 /* --- Gallery --- */
 .gallery { background: var(--color-light); }
 .gallery-grid {
