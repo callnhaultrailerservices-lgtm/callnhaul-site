@@ -1,0 +1,11 @@
+{
+  "name": "Call N Haul Trailer Services",
+  "short_name": "Call N Haul",
+  "icons": [
+    { "src": "/images/favicon-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/images/favicon-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#f97316",
+  "background_color": "#ffffff",
+  "display": "browser"
+}
