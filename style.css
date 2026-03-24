@@ -329,6 +329,61 @@ ul { list-style: none; }
   font-weight: 500;
 }
 
+/* --- Reviews --- */
+.reviews { background: var(--color-light); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+.review-card {
+  background: var(--color-white);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+.review-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-primary);
+}
+.review-stars {
+  color: #f5a623;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+.review-text {
+  font-size: .95rem;
+  line-height: 1.65;
+  color: var(--color-dark);
+  flex: 1;
+}
+.review-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+.review-name {
+  font-weight: 700;
+  font-size: .875rem;
+  color: var(--color-dark);
+}
+.review-platform {
+  font-size: .75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+  letter-spacing: .4px;
+}
+.platform-google  { background: #e8f0fe; color: #1a73e8; }
+.platform-facebook{ background: #e7f0fd; color: #1877f2; }
+.platform-yelp    { background: #fdecea; color: #d32323; }
+
 /* --- Gallery --- */
 .gallery { background: var(--color-light); }
 .gallery-grid {
