@@ -90,9 +90,7 @@ if (contactForm) {
       });
 
       if (response.ok) {
-        form.querySelectorAll('input, select, textarea').forEach(el => (el.disabled = true));
-        btn.textContent = 'Sent!';
-        success.removeAttribute('hidden');
+        window.location.href = 'thank-you.html';
       } else {
         btn.textContent = 'Send Message';
         btn.disabled = false;
