@@ -339,7 +339,7 @@ ul { list-style: none; }
 .review-card {
   background: var(--color-white);
   border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   padding: 28px 24px 22px;
   display: flex;
   flex-direction: column;
@@ -514,7 +514,9 @@ ul { list-style: none; }
 .contact-card svg { width: 32px; height: 32px; color: var(--color-primary); margin: 0 auto 16px; }
 .contact-card h3 { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
 .contact-card .contact-link {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--color-primary);

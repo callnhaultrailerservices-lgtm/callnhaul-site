@@ -72,33 +72,51 @@ if (contactForm) {
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('button[type="submit"]');
-    const success = document.getElementById('form-success');
     const error = document.getElementById('form-error');
 
-    // Hide previous messages
-    success.setAttribute('hidden', '');
+    // Hide previous error
     error.setAttribute('hidden', '');
+
+    // Client-side validation
+    const name = form.querySelector('#name').value.trim();
+    const phone = form.querySelector('#phone').value.trim();
+    const service = form.querySelector('#service').value;
+
+    if (!name || !phone || !service) {
+      error.textContent = 'Please fill in your name, phone number, and the service you need.';
+      error.removeAttribute('hidden');
+      return;
+    }
 
     btn.textContent = 'Sending…';
     btn.disabled = true;
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
 
     try {
       const response = await fetch('https://formspree.io/f/xzdjlkvl', {
         method: 'POST',
         body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Accept': 'application/json' },
+        signal: controller.signal
       });
+
+      clearTimeout(timeout);
 
       if (response.ok) {
         window.location.href = 'thank-you.html';
       } else {
         btn.textContent = 'Send Message';
         btn.disabled = false;
+        error.textContent = 'Something went wrong. Please try again or call us at (623) 850-8221.';
         error.removeAttribute('hidden');
       }
     } catch {
+      clearTimeout(timeout);
       btn.textContent = 'Send Message';
       btn.disabled = false;
+      error.textContent = 'Something went wrong. Please try again or call us at (623) 850-8221.';
       error.removeAttribute('hidden');
     }
   });
